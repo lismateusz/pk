@@ -713,7 +713,7 @@
             updateEnemies();
 
             // draw the score
-            ctx.fillText('Score: ' + score + 'm', canvas.width - 140, 30);
+            ctx.fillText('Wynik: ' + score + 'm', canvas.width - 140, 30);
 
             // spawn a new Sprite
             if (ticker % Math.floor(platformWidth / player.speed) === 0) {
@@ -759,7 +759,6 @@
     document.onkeydown = function (e) {
         var keyCode = (e.keyCode) ? e.keyCode : e.charCode;
         if (KEY_CODES[keyCode]) {
-            console.log('keydown');
             e.preventDefault();
             KEY_STATUS[KEY_CODES[keyCode]] = true;
         }
@@ -767,7 +766,6 @@
     document.onkeyup = function (e) {
         var keyCode = (e.keyCode) ? e.keyCode : e.charCode;
         if (KEY_CODES[keyCode]) {
-            console.log('keyup');
             e.preventDefault();
             KEY_STATUS[KEY_CODES[keyCode]] = false;
         }

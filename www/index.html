@@ -6,7 +6,6 @@
         <title>Kandi Runner</title>
         <link rel="stylesheet" href="kandi.css" type="text/css" media="screen">
         <script src="pgb.js"></script>
-        <!--<script src="cordova.js"></script>-->
         <script type="text/javascript" src="jquery.2.1.1.min.js"></script>
     </head>
     <body>
@@ -15,20 +14,20 @@
                 <div class="sound sound-off"></div>
                 <div id="menu">
                     <div id="progress">
-                        <div id="percent">Downloading: <span id="p"></span></div>
+                        <div id="percent">Trwa pobieranie <span id="p"></span></div>
                         <progress id="progress-bar" value="0"></progress>
                     </div>
                     <div id="main">
-                        <h1>Endless runner</h1>
+                        <h1>Biegnij bez końca!</h1>
                         <ul>
-                            <li><a href="javascript:void(0)" class="button play">Start Game</a></li>
+                            <li><a href="javascript:void(0)" class="button play">Rozpocznij</a></li>
                         </ul>
                     </div>
                 </div>
                 <canvas id="canvas" width="800" height="480"></canvas>
                 <div id="game-over">
-                    <h2>You ran <span id="score"></span> meters!</h2>
-                    <a href="javascript:void(0)" class="button restart">Try again?</a>
+                    <h2>Przebiegłeś <span id="score"></span> metrów!</h2>
+                    <a href="javascript:void(0)" class="button restart">Jeszcze raz?</a>
                 </div>
             </div>
         </div>
@@ -45,7 +44,7 @@
                     keepRatio();
                 });
                 
-                $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+                $("html, body").animate({ scrollTop: $(document).height() }, "fast");
                 
                 (function() {
                     $(document).on("touchend", "canvas", function() {
@@ -57,7 +56,6 @@
                     });
                 })();
             });
-            
         </script>
     </body>
 </html>
