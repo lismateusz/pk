@@ -33,28 +33,32 @@
         </div>
         <script type="text/javascript" src="kandi.js"></script>
         <script>
+            function scrollToBottom() {
+                $("html, body").animate({ scrollTop: $(document).height() }, "fast");
+            }
+            
             function keepRatio() {
                 $('#canvas').height($('#canvas').width() / 1.777);
+                scrollToBottom();
+            }
+            
+            function bindEvents() {
+                $(document).on("touchend", "canvas", function() {
+                    $("canvas").trigger({type: 'keyup', which: 32, keyCode: 32});
+                });
+
+                $(document).on("touchstart", "canvas", function() {
+                    $("canvas").trigger({type: 'keydown', which: 32, keyCode: 32});
+                });
             }
             
             $(document).ready(function() {
                 keepRatio();
+                bindEvents();
                 
                 $(window).resize(function(){
                     keepRatio();
                 });
-                
-                $("html, body").animate({ scrollTop: $(document).height() }, "fast");
-                
-                (function() {
-                    $(document).on("touchend", "canvas", function() {
-                        $("canvas").trigger({type: 'keyup', which: 32, keyCode: 32});
-                    });
-
-                    $(document).on("touchstart", "canvas", function() {
-                        $("canvas").trigger({type: 'keydown', which: 32, keyCode: 32});
-                    });
-                })();
             });
         </script>
     </body>
