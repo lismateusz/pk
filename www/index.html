@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script src="js/pgb.js"></script>
+		<script src="cordova.js"></script>
+        <title>Endless Runner</title>
+        <link rel="stylesheet" href="css/kandi.css" type="text/css" media="screen">
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	</head>
+	<body onload="init()">
+		<div class="wrapper-outer"><div class="wrapper-inner"><canvas id="canvas" width="800" height="480"></canvas></div></div>
+        <script type="text/javascript" src="js/kandi.js"></script>
+        <script>
+            function keepRatio() {
+                $('#canvas').height($('#canvas').width() / 1.66666666667);
+            }
+            
+            $(document).ready(function() {
+                keepRatio();
+                
+                $(window).resize(function(){
+                    keepRatio();
+                });
+            });
+        </script>
+	</body>
+</html>
