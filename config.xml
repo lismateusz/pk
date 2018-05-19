@@ -4,13 +4,19 @@
 		id          = "myfirstapp"
         version     = "1.0.0" >
 
-    <name>First app</name>
-    <description>My first mobile app</description>
-    <author email="dev@mateuszlis.com">
-		Mateusz Lis
+    <name>Biegnij Forrest!</name>
+    <description>Przebiegnij najdalej jak potrafisz</description>
+    <author email="uek">
+		UEK Team
 	</author>
 	<platform name="android" />
 	
 	<plugin name="cordova-plugin-device" spec="2.0.1" />
 	<plugin name="cordova-plugin-dialogs" spec="2.0.1" />
+    
+    
+    <plugin name="cordova-plugin-whitelist" source="npm" />
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
 </widget>
