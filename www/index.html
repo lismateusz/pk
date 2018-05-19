@@ -3,10 +3,12 @@
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Kandi Runner</title>
+        <title>Biegnij bez końca!</title>
         <link rel="stylesheet" href="kandi.css" type="text/css" media="screen">
         <script src="pgb.js"></script>
         <script type="text/javascript" src="jquery.2.1.1.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+        <script src="firebase.js"></script>
     </head>
     <body>
         <div class="wrapper-outer">
@@ -20,8 +22,15 @@
                     <div id="main">
                         <h1>Biegnij bez końca!</h1>
                         <ul>
-                            <li><a href="javascript:void(0)" class="button play">Rozpocznij</a></li>
+                            <input id="nickname" type="text" value="" placeholder="pseudonim..." />
+                            <li><a href="javascript:void(0)" id="playBtn" class="button">Rozpocznij</a></li>
                         </ul>
+                        <div>
+                            <h1>Najlepsze wyniki:</h1>
+                            <div id="topResults">
+                                Trwa pobieranie wyników...
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <canvas id="canvas" width="800" height="480"></canvas>
@@ -49,6 +58,20 @@
 
                 $(document).on("touchstart", "canvas", function() {
                     $("canvas").trigger({type: 'keydown', which: 32, keyCode: 32});
+                });
+                
+                $(document).on('change', '#nickname', function(event) {
+                    if(!$(this).val()) {
+                        $("#playBtn").removeClass('play');
+                    } else {
+                        $("#playBtn").addClass('play');
+                    }
+                });
+                
+                $(document).on('click', '.play', function(event) {
+                    if($('#nickname').val()) {
+                        localStorage.setItem("nickname", $('#nickname').val());
+                    }
                 });
             }
             

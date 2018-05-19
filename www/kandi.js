@@ -845,6 +845,7 @@
         stop = true;
         $('#score').html(score);
         $('#game-over').show();
+        saveResult(score);
         assetLoader.sounds.bg.pause();
         assetLoader.sounds.gameOver.currentTime = 0;
         assetLoader.sounds.gameOver.play();
@@ -887,7 +888,7 @@
             }
         }
     });
-    $('.play').click(function () {
+    $(document).on('click', '.play', function () {
         $('#menu').hide();
         startGame();
     });
