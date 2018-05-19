@@ -70,6 +70,8 @@
                 
                 $(document).on('click', '.play', function(event) {
                     if($('#nickname').val()) {
+                        $('canvas').show();
+                        scrollToBottom();
                         localStorage.setItem("nickname", $('#nickname').val());
                     }
                 });
