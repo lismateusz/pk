@@ -11,6 +11,7 @@
 	</author>
 	<platform name="android" />
 	
+    <icon src="imgs/icon.png">
 	<plugin name="cordova-plugin-device" spec="2.0.1" />
 	<plugin name="cordova-plugin-dialogs" spec="2.0.1" />
     
